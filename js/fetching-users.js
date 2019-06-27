@@ -5,7 +5,7 @@
     let users = []
 
     function fetchUsers() {
-        fetch('https://randomuser.me/api')
+        fetch('https://randomuser.me/api/?results=10')
             .then((response) => response.json())
             .then((usersFromApi) => {
                 users = usersFromApi.results
