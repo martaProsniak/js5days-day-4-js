@@ -2,10 +2,12 @@
 
     const mainContainerElement = document.querySelector('.fetching-users')
 
+    const numberOfUsers = 5
+
     let users = []
 
     function fetchUsers() {
-        fetch('https://randomuser.me/api/?results=10')
+        fetch('https://randomuser.me/api/?results=' + numberOfUsers)
             .then((response) => response.json())
             .then((usersFromApi) => {
                 users = usersFromApi.results
