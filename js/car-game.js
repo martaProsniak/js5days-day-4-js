@@ -23,7 +23,7 @@ function carGame(selector) {
         carElement.style.backgroundSize = 'contain'
         carElement.style.backgroundPosition = 'center center'
         carElement.style.backgroundImage = 'url(../img/car.png)'
-        carElement.style.clip = 'initial'
+
 
         roadElement.style.position = 'relative'
         roadElement.style.height = '200px'
@@ -59,7 +59,8 @@ function carGame(selector) {
         }
 
         if (carBack < roadLeftEnd) {
-            carElement.style.clip = 'rect(0px, ' + carBack + 'px, 100px, 0px)'
+            const carOfTheRoad = (carFront - carBack) - (roadLeftEnd - carBack)
+            carElement.style.clip = 'rect(0px, ' + carOfTheRoad + 'px, 100px, 0px)'
         }
     }
 
