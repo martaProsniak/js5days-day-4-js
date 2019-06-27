@@ -29,6 +29,7 @@
         imgElement.setAttribute('src', img)
 
         nameElement.innerText = name // !overrides old html value
+        nameElement.style.textTransform = 'capitalize'
 
         containerElement.appendChild(imgElement)
         containerElement.appendChild(nameElement)
@@ -37,6 +38,13 @@
     }
 
     function renderList() {
+        console.log(users.length)
+        if (users.length === 0){
+            mainContainerElement.innerText = 'Loading...'
+        } else {
+            mainContainerElement.innerText = ''
+        }
+
         for (let i = 0; i < users.length; i++) {
             const user = users[i]
 
@@ -47,7 +55,9 @@
 
             const item = renderListItem(name, img)
 
+
             mainContainerElement.appendChild(item)
+            
         }
     }
 
