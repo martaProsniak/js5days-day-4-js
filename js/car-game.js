@@ -1,5 +1,4 @@
 function carGame(selector) {
-
     const containerElement = document.querySelector(selector)
     const carElement = document.createElement('div')
     const roadElement = document.createElement('div')
