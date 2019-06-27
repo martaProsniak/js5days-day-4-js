@@ -44,14 +44,19 @@ function carGame(selector) {
         velocity = velocity + acceleration * time
         carElement.style.left = position + 'px'
 
-        const roadEnd = roadElement.getBoundingClientRect().right
+        const roadRightEnd = roadElement.getBoundingClientRect().right
+        const roadLeftEnd = roadElement.getBoundingClientRect().left
         const carFront = carElement.getBoundingClientRect().right
         const carBack = carElement.getBoundingClientRect().left
-        if ( carFront >= roadEnd){
-            const carOfTheRoad = carFront - roadEnd
+        if ( carFront >= roadRightEnd){
+            const carOfTheRoad = carFront - roadRightEnd
             carElement.style.clip = 'rect(0px, 100px, 100px, ' + carOfTheRoad + 'px)'
         }
+        if (carBack < roadLeftEnd) {
+            carElement.style.clip = 'rect(0px, ' + carBack + 'px, 100px, 0px)'
+        }
     }
+
 
     setElementsStyle();
 
