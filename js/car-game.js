@@ -10,7 +10,8 @@ function carGame(selector) {
     let acceleration = 0
     let position = 0
 
-    function displayCarAndCar() {
+    function setElementsStyle() {
+
         carElement.style.width = '70px'
         carElement.style.height = '70px'
         carElement.style.top = '50%'
@@ -22,6 +23,7 @@ function carGame(selector) {
         carElement.style.backgroundSize = 'contain'
         carElement.style.backgroundPosition = 'center center'
         carElement.style.backgroundImage = 'url(../img/car.png)'
+        carElement.style.clip = 'initial'
 
         roadElement.style.position = 'relative'
         roadElement.style.height = '200px'
@@ -41,9 +43,17 @@ function carGame(selector) {
         position = position + velocity * time + ((acceleration * time * time) / 2)
         velocity = velocity + acceleration * time
         carElement.style.left = position + 'px'
+
+        const roadEnd = roadElement.getBoundingClientRect().right
+        const carFront = carElement.getBoundingClientRect().right
+        const carBack = carElement.getBoundingClientRect().left
+        if ( carFront >= roadEnd){
+            const carOfTheRoad = carFront - roadEnd
+            carElement.style.clip = 'rect(0px, 100px, 100px, ' + carOfTheRoad + 'px)'
+        }
     }
 
-    displayCarAndCar();
+    setElementsStyle();
 
     setInterval(
         // move instead of move() to pass the whole function into setInterval function
