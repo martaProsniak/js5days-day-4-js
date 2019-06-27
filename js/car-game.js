@@ -11,17 +11,25 @@ function carGame(selector) {
     let position = 0
 
     function displayCarAndCar() {
-        carElement.style.width = '100px'
-        carElement.style.height = '100px'
-        carElement.style.backgroundColor = 'red'
-
+        carElement.style.width = '70px'
+        carElement.style.height = '70px'
+        carElement.style.top = '50%'
+        carElement.style.transform = 'translateY(-50%) rotate(180deg)'
         carElement.style.position = 'absolute'
         carElement.style.left = position + 'px'
+        carElement.style.backgroundColor = 'transparent'
+        carElement.style.backgroundRepeat = 'no-repeat'
+        carElement.style.backgroundSize = 'contain'
+        carElement.style.backgroundPosition = 'center center'
+        carElement.style.backgroundImage = 'url(../img/car.png)'
 
-        roadElement.style.backgroundColor = 'grey'
-        roadElement.style.width = '100%'
-        roadElement.style.height = '100px'
         roadElement.style.position = 'relative'
+        roadElement.style.height = '200px'
+        roadElement.style.width = '100%'
+        roadElement.style.backgroundRepeat = 'repeat-x'
+        roadElement.style.backgroundSize = 'contain'
+        roadElement.style.backgroundColor = 'grey'
+        roadElement.style.backgroundImage = 'url(../img/road.png)'
 
         roadElement.appendChild(carElement)
         containerElement.appendChild(roadElement)
