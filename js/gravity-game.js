@@ -3,9 +3,10 @@
     const planetElement = document.createElement('div')
     const alienElement = document.createElement('div')
 
-    const earthGravityAcceleration = -9.81
-    const initialVelocity = 20
-    const tickDuration = 10
+    const earthGravityAcceleration = -9.81 //in meters per second
+    const initialVelocity = 7 //in meters per second
+    const tickDuration = 10 //in miliseconds
+    const pixelsPerMeter = 25 //ratio
 
     let position = 0
     let velocity = 0
@@ -39,16 +40,18 @@
     window.addEventListener(
         'keydown',
         function (event) {
-            if (event.key === ' ') {
-                velocity = initialVelocity
+            if (event.key === ' ' && position === 0) {
+                    velocity = initialVelocity * pixelsPerMeter
             }
         }
     )
 
     function jump() {
         const time = tickDuration / 1000 // miliseconds to seconds
-        const newPosition = position + velocity * time + ((earthGravityAcceleration * time * time) / 2)
-        const newVelocity = velocity + earthGravityAcceleration * time
+        const gravity = earthGravityAcceleration * pixelsPerMeter
+        
+        const newPosition = position + velocity * time + ((gravity * time * time) / 2)
+        const newVelocity = velocity + gravity * time
 
         position = Math.max(0, newPosition)
         velocity = position === 0 ? 0 : newVelocity
