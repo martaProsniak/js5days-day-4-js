@@ -4,7 +4,7 @@
     const alienElement = document.createElement('div')
 
     const earthGravityAcceleration = -9.81
-    const initialVelocity = 50
+    const initialVelocity = 20
     const tickDuration = 10
 
     let position = 0
