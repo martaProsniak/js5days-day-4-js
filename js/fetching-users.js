@@ -4,6 +4,16 @@
 
     let users = []
 
+    function fetchUsers() {
+        fetch('https://randomuser.me/api')
+            .then((response) => response.json())
+            .then((usersFromApi) => {
+                users = usersFromApi.results
+                render()
+            })
+            .catch((err) => console.log('Error!'))
+    }
+
     function renderListItem(name, img) {
         const containerElement = document.createElement('div')
         const imgElement = document.createElement('img')
@@ -43,6 +53,7 @@
         renderList()
     }
 
+    fetchUsers()
     render()
 
 })()
