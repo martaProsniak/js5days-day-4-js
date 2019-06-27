@@ -1,0 +1,62 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* webside won't scroll left or right (x)*/
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container--shadow {
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12);
+}
+
+.container--border{
+    border-radius: 4px;
+    padding: 20px; /*padding together with border*/
+}
+
+/* END OF CONTAINER */
+
+/* HERO */
+
+.glide__slides {
+    margin: 0;
+}
+
+.glide__slide {
+    position: relative;
+}
+
+.glide__slide-img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.glide__slide-header{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* END OF HERO */
+
+.technologies__col {
+    display: flex;
+    justify-content: center;
+}
+
+.technologies__img {
+   height: 250px;
+   max-width: 100%;
+}
