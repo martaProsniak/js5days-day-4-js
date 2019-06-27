@@ -14,7 +14,7 @@
     function displayAlienAndPlanet() {
         alienElement.style.width = '50px'
         alienElement.style.height = '50px'
-        alienElement.style.backgroundColor = 'green'
+        alienElement.style.backgroundColor = 'black'
 
         alienElement.style.position = 'absolute'
         alienElement.style.left = '50%'
