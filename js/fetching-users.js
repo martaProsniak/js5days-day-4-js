@@ -38,11 +38,10 @@
     }
 
     function renderList() {
-        console.log(users.length)
+        mainContainerElement.innerText = ''
         if (users.length === 0){
             mainContainerElement.innerText = 'Loading...'
-        } else {
-            mainContainerElement.innerText = ''
+            return
         }
 
         for (let i = 0; i < users.length; i++) {
